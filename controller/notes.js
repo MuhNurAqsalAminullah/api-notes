@@ -35,7 +35,7 @@ const findOneNotes = (req, res) => {
       res.status(200).json({
         message: "Get one notes success",
         success: true,
-        data: results,
+        data: results[0],
       });
     }
   });
