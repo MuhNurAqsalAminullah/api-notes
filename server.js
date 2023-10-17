@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/notes", notesRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Connetting Home Api Notes App");
+  res.send("Home Api Notes Application");
 });
 
 app.listen(PORT, () => {
