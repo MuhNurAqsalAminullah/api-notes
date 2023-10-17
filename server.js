@@ -4,10 +4,12 @@ const PORT = process.env.PORT || 5000;
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const morgan = require('morgan')
 const notesRoutes = require("./routes/notes");
 
 const app = express();
 
+app.use(morgan('dev'))
 app.use(cors({ origin: "*" }));
 
 app.use(bodyParser.json());
@@ -19,6 +21,6 @@ app.get("/", (req, res) => {
   res.send("Connetting Home Api Notes App");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
